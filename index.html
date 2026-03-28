@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigo Art Hub | Master African Craftsmanship</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:image" content="https://[adireibile23-cpu].github.io/indigoarthub/assets/og-image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+    .footer-social { flex: 1; min-width: 250px; margin: 5px 0; }
+    .footer-social h4 { margin-bottom: 8px; }
+    .social-icons { display: flex; gap: 15px; margin-top: 10px; flex-wrap: wrap; }
+    .social-link {
+        width: 42px; height: 42px; border-radius: 50%;
+        border: 1px solid var(--gold); display: flex;
+        align-items: center; justify-content: center;
+        text-decoration: none; transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--gold) !important; font-weight: 600; font-size: 0.85rem;
+    }
+    .social-link:hover {
+        background: var(--gold); color: var(--deep-blue) !important;
+        transform: translateY(-5px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+    /* Button Center Fix for Mobile */
+    .hero-btns, .artisan-intro .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center; /* Centers buttons horizontally */
+        align-items: center;
+    }
+    @media (max-width: 768px) {
+        .footer-content { flex-direction: column; text-align: center; align-items: center; gap: 20px; }
+        .social-icons { justify-content: center; }
+        .featured-artisan-grid { grid-template-columns: 1fr !important; }
+        .artisan-intro { text-align: center; } /* Centers text on mobile */
+    }
+</style>
+</head>
+<body>
+    <div id="loader-wrapper">
+    <div id="loader"></div>
+    <p class="loader-text">Loading the Masters...</p>
+</div>
+
+
+    <a href="https://wa.me/2349058259924?text=Hello%20Indigo%20Art%20Hub,%20I'm%20interested%20in%20learning%20more%20about%20the%20collection." 
+       target="_blank" 
+       class="whatsapp-float" 
+       title="Chat with Tayo">
+        <span class="chat-icon">💬</span>
+        <span class="chat-text">Chat with Tayo</span>
+    </a>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo-container" style="display: flex; align-items: center; gap: 12px; padding: 5px 0;">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 45px; width: 45px;">
+                    <circle cx="50" cy="50" r="48" stroke="#D4AF37" stroke-width="4" fill="none"/>
+                    <path d="M50 20C40.6667 36.6667 40.6667 63.3333 50 80C59.3333 63.3333 59.3333 36.6667 50 20Z" fill="#D4AF37"/>
+                    <path d="M20 50C36.6667 40.6667 63.3333 40.6667 80 50C63.3333 59.3333 36.6667 59.3333 20 50Z" fill="#D4AF37"/>
+                    <circle cx="50" cy="50" r="8" fill="#ffffff"/>
+                </svg>
+                <span class="logo-text" style="font-weight: 700; letter-spacing: 1px;">INDIGO<span class="hub-accent">ARTHUB</span></span>
+            </div>
+        </a>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+            <li><a href="pages/artists.html">Artisans</a></li>
+            <li><a href="pages/tayo-profile.html">The Artist</a></li> 
+            <li><a href="pages/about.html">The Craft</a></li>
+            <li><a href="pages/contact.html">Contact</a></li> 
+            <li><a href="pages/register.html">Join Us</a></li>
+            <li><a href="pages/login.html">Login</a></li>
+        </ul>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hand-Dyed. Hand-Carved. <span class="highlight">Mastered.</span></h1>
+            <p>Experience the soul of West African art, from deep Indigo Batik to timeless stone sculptures.</p>
+            <div class="hero-btns" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="pages/gallery.html" class="btn btn-gold" style="display: flex; align-items: center; justify-content: center; min-width: 180px; height: 55px; margin: 0;">Explore Gallery</a>
+                <a href="pages/register.html" class="btn btn-outline" style="display: flex; align-items: center; justify-content: center; min-width: 180px; height: 55px; margin: 0;">Join as Artist</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="counter-section" style="padding: 80px 5%; text-align: center; background-image: linear-gradient(rgba(5, 10, 31, 0.88), rgba(5, 10, 31, 0.88)), url('assets/images/site/batik-pattern-bg.jpg'); background-attachment: fixed; background-size: 450px;">
+        <div class="gallery-grid" style="max-width: 1000px; margin: 0 auto;">
+            <div class="counter-item">
+                <h2 class="counter-number" data-target="12" style="font-family: var(--font-heading); color: var(--gold); font-size: 3rem;">0</h2>
+                <p style="color: #ccc; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Master Artisans</p>
+            </div>
+            <div class="counter-item">
+                <h2 class="counter-number" data-target="150" style="font-family: var(--font-heading); color: var(--gold); font-size: 3rem;">0</h2>
+                <p style="color: #ccc; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Sacred Pieces</p>
+            </div>
+            <div class="counter-item">
+                <h2 class="counter-number" data-target="8" style="font-family: var(--font-heading); color: var(--gold); font-size: 3rem;">0</h2>
+                <p style="color: #ccc; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Craft Guilds</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-artisan" style="padding: 100px 5%; background-image: linear-gradient(rgba(5, 10, 31, 0.85), rgba(5, 10, 31, 0.95)), url('assets/images/site/adire-pattern.jpg'); background-attachment: fixed; background-size: 600px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center;" class="featured-artisan-grid">
+            <div class="artisan-portrait" style="position: relative;">
+                <div style="border: 2px solid var(--gold); padding: 10px; border-radius: 20px; background: rgba(8, 16, 49, 0.5); backdrop-filter: blur(5px);">
+                    <img src="assets/images/site/maker-profile.jpg" alt="Tayo Oladele" style="width: 100%; border-radius: 10px; display: block; filter: grayscale(20%);">
+                </div>
+                <div style="position: absolute; bottom: -20px; right: -20px; background: var(--gold); color: #000; padding: 15px 25px; font-weight: 700; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">MASTER ARTISAN</div>
+            </div>
+            <div class="artisan-intro">
+                <h6 style="color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px;">Spotlight</h6>
+                <h2 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 25px; line-height: 1.2;">The Vision of <br><span class="highlight">Tayo Oladele</span></h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #eee; margin-bottom: 35px;">Based in the heart of Osogbo, Tayo translates Yoruba history into contemporary masterpieces. From the rhythm of his pen to the dip of the indigo vat, his work is a bridge between generations.</p>
+                
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <a href="pages/tayo-collection.html" class="btn btn-gold" style="display: flex; align-items: center; justify-content: center; min-width: 180px; height: 55px; margin: 0;">View Collection</a>
+                    <a href="pages/tayo-profile.html" class="btn btn-outline" style="display: flex; align-items: center; justify-content: center; min-width: 180px; height: 55px; margin: 0; border-color: var(--gold); color: var(--gold);">Read Biography</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer" style="padding: 80px 5% 30px; background: #050a1f; border-top: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 45px; align-items: center;">
+            <div class="footer-logo">
+                <span class="logo-text" style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #fff; letter-spacing: 2px;">INDIGO<span style="color: #D4AF37;">ARTHUB</span></span>
+                <p style="color: #ccc; font-size: 0.95rem; margin-top: 10px; max-width: 400px; line-height: 1.7; margin-left: auto; margin-right: auto;">Preserving West African craftsmanship. From the heart of Osogbo to the modern world.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 style="color: #D4AF37; font-family: 'Playfair Display', serif; margin-bottom: 20px; font-size: 1.3rem;">Explore the Hub</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
+                    <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 1rem;">Home</a></li>
+                    <li><a href="pages/gallery.html" style="color: #fff; text-decoration: none; font-size: 1rem;">The Collection</a></li>
+                    <li><a href="pages/artists.html" style="color: #fff; text-decoration: none; font-size: 1rem;">The Artisans</a></li>
+                    <li><a href="pages/tayo-profile.html" style="color: #fff; text-decoration: none; font-size: 1rem;">The Artist</a></li>
+                    <li><a href="pages/about.html" style="color: #fff; text-decoration: none; font-size: 1rem;">The Craft</a></li>
+                    <li><a href="pages/contact.html" style="color: #fff; text-decoration: none; font-size: 1rem;">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact" style="background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1); width: 100%; max-width: 500px;">
+                <h4 style="color: #D4AF37; font-family: 'Playfair Display', serif; margin-bottom: 20px; font-size: 1.3rem;">Direct Support</h4>
+                <p style="color: #fff; font-size: 1rem; margin-bottom: 12px;">📍 <strong>Address:</strong> Osogbo, Osun State, Nigeria</p>
+                <p style="color: #fff; font-size: 1rem; margin-bottom: 12px;">✉️ <strong>Email:</strong> hello@indigohub.art</p>
+                <p style="color: #fff; font-size: 1rem;">📞 <strong>Phone:</strong> +234 905 825 9924</p>
+            </div>
+
+            <div class="footer-social">
+                <h4 style="color: #D4AF37; font-family: 'Playfair Display', serif; margin-bottom: 25px; font-size: 1.2rem;">Connect With Us</h4>
+                <div class="social-icons" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/2349058259924" target="_blank" class="social-link">WA</a>
+                    <a href="#" class="social-link">FB</a>
+                    <a href="#" class="social-link">𝕏</a>
+                    <a href="https://t.me/indigohub" target="_blank" class="social-link">TG</a>
+                    <a href="#" class="social-link">TK</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom" style="margin-top: 60px; padding-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <p style="color: #777; font-size: 0.85rem; letter-spacing: 1px;">&copy; 2026 INDIGO ARTHUB. ALL RIGHTS RESERVED.</p>
+        </div>
+        <p style="margin-top: 15px;">
+    <a href="pages/privacy.html" style="color: #777; font-size: 0.75rem; text-decoration: none;">Terms of the Covenant & Privacy</a>
+</p>
+    </footer>
+
+    <div id="welcome-toast" class="toast-container">
+        <span>✨</span>
+        <span>New Adire pieces just arrived in the Gallery!</span>
+    </div>
+
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('#nav-menu');
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+    
+        window.addEventListener('load', () => {
+            const toast = document.getElementById('welcome-toast');
+            if(toast) {
+                setTimeout(() => {
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 5000);
+                }, 2000);
+            }
+        });
+
+        const counters = document.querySelectorAll('.counter-number');
+        const speed = 100;
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else { counter.innerText = target + "+"; }
+                };
+                updateCount();
+            });
+        };
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) { startCounters(); observer.disconnect(); }
+        }, { threshold: 0.5 });
+        observer.observe(document.querySelector('.counter-section'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "artisans": [
+    {
+      "id": "tayo-oladele",
+      "name": "Tayo Oladele",
+      "location": "Osogbo, Osun State",
+      "bio": "With over 20 years of immersion in the indigo vats...",
+      "profile_image": "assets/images/site/maker-profile.jpg",
+      "commission_wa": "2349058259924",
+      "styles": ["Adire Eleko", "Batik", "Pen & Ink"]
+    },
+    {
+      "id": "adebayo-art",
+      "name": "Adebayo Smith",
+      "location": "Osogbo, Osun State",
+      "bio": "A master of stone carving and traditional Yoruba sculpture...",
+      "profile_image": "assets/images/site/adebayo-profile.jpg",
+      "commission_wa": "2349058259924",
+      "styles": ["Stone Carving", "Bronze"]
+    }
+  ]
+}
