@@ -187,45 +187,78 @@
     </div>
 
     <script>
-        const menu = document.querySelector('#mobile-menu');
-        const menuLinks = document.querySelector('#nav-menu');
+    // 1. THE LOADER FIX (Priority #1)
+    const revealMasters = () => {
+        const loader = document.getElementById('loader-wrapper');
+        if (loader) {
+            loader.classList.add('loader-hidden');
+            console.log("UI: Masters Revealed.");
+        }
+    };
+
+    // Reveal when everything is finished loading
+    window.addEventListener('load', revealMasters);
+
+    // THE FAIL-SAFE: If images are missing or slow, force show after 2.5 seconds
+    setTimeout(revealMasters, 2500);
+
+    // 2. MOBILE MENU LOGIC
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('#nav-menu');
+
+    if (menu && menuLinks) {
         menu.addEventListener('click', function() {
             menu.classList.toggle('is-active');
             menuLinks.classList.toggle('active');
         });
-    
-        window.addEventListener('load', () => {
-            const toast = document.getElementById('welcome-toast');
-            if(toast) {
-                setTimeout(() => {
-                    toast.classList.add('show');
-                    setTimeout(() => {
-                        toast.classList.remove('show');
-                    }, 5000);
-                }, 2000);
-            }
-        });
+    }
 
-        const counters = document.querySelectorAll('.counter-number');
-        const speed = 100;
-        const startCounters = () => {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const inc = target / speed;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 20);
-                    } else { counter.innerText = target + "+"; }
-                };
-                updateCount();
-            });
-        };
-        const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting) { startCounters(); observer.disconnect(); }
-        }, { threshold: 0.5 });
-        observer.observe(document.querySelector('.counter-section'));
-    </script>
+    // 3. WELCOME TOAST LOGIC
+    window.addEventListener('load', () => {
+        const toast = document.getElementById('welcome-toast');
+        if(toast) {
+            setTimeout(() => {
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 5000);
+            }, 2000);
+        }
+    });
+
+    // 4. COUNTER ANIMATION LOGIC
+    const counters = document.querySelectorAll('.counter-number');
+    const speed = 100;
+
+    const startCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20);
+                } else { 
+                    counter.innerText = target + "+"; 
+                }
+            };
+            updateCount();
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) { 
+            startCounters(); 
+            observer.disconnect(); 
+        }
+    }, { threshold: 0.5 });
+
+    const counterSection = document.querySelector('.counter-section');
+    if (counterSection) {
+        observer.observe(counterSection);
+    }
+</script>
 </body>
+<script src="js/script.js"></script>
 </html>
