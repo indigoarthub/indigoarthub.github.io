@@ -57,7 +57,7 @@
                                                                                                                                         padding: 100px 20px 40px;
                                                                                                                                             /* Verified Path: assets/images/hero/hero-bg.png */
                                                                                                                                                 background: linear-gradient(rgba(8, 16, 49, 0.7), rgba(8, 16, 49, 0.7)), 
-                                                                                                                                                                url('../assets/images/hero/hero-bg.png') no-repeat center center/cover;
+                                                                                                                                                                url('../assets/images/hero/hero-bg.webp') no-repeat center center/cover;
                                                                                                                                                                 }
 
                                                                                                                                                                 .hero-content {
