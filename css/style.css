@@ -326,7 +326,7 @@ footer.main-footer {
     justify-content: center;
     padding: 120px 20px 60px;
     background: linear-gradient(rgba(8, 16, 49, 0.8), rgba(8, 16, 49, 0.8)),
-                url('../assets/images/hero/hero-bg.png') no-repeat center center/cover;
+                url('../assets/images/hero/hero-bg.webp') no-repeat center center/cover;
 }
 
 .login-box {
@@ -585,7 +585,7 @@ footer.main-footer {
 body.gallery-immersive {
     background-color: #050a1f;
     background-image: linear-gradient(rgba(8, 16, 49, 0.4), rgba(8, 16, 49, 0.6)), 
-                url('../assets/images/site/gallery-bg.jpg') !important;
+                url('../assets/images/site/gallery-bg.webp') !important;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -606,7 +606,7 @@ body.gallery-immersive {
 /* --- 2. Tayo's Profile (Blue Geometric) --- */
 body.profile-immersive {
     background: linear-gradient(rgba(8, 16, 49, 0.8), rgba(8, 16, 49, 0.8)), 
-                url('../assets/images/site/adire-pattern.jpg') !important;
+                url('../assets/images/site/adire-pattern.webp') !important;
     background-attachment: fixed;
     background-size: 600px;
 }
@@ -614,7 +614,7 @@ body.profile-immersive {
 /* --- 3. The Craft (Orange Starburst) --- */
 body.about-immersive {
     background-image: linear-gradient(rgba(8, 16, 49, 0.7), rgba(8, 16, 49, 0.8)), 
-                url('../assets/images/site/about-bg.jpg') !important;
+                url('../assets/images/site/about-bg.webp') !important;
     background-attachment: fixed;
     background-size: cover;
 }
