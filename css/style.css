@@ -119,9 +119,25 @@ html, body {
 .nav-links li a { color: var(--white); text-decoration: none; margin-left: 25px; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
 .nav-links li a:hover, .nav-links li a.active { color: var(--gold); }
 
-/* 5. MOBILE MENU */
-.menu-toggle { display: none; cursor: pointer; }
-.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--gold); transition: 0.3s; }
+/* 1. THE TOGGLE: Fixes the "One Long Line" icon */
+.menu-toggle {
+    display: none; /* Keep hidden on desktop */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;       /* FIXED WIDTH: This stops it from stretching */
+    height: 22px;      /* FIXED HEIGHT */
+    z-index: 1001;     /* Sits on the navbar */
+    position: relative;
+}
+
+.bar {
+    display: block;
+    width: 100%;       /* Each bar stays 30px wide */
+    height: 3px;
+    background-color: var(--gold);
+    border-radius: 2px;
+}
 
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
@@ -205,73 +221,93 @@ html, body {
 .art-card:hover { transform: translateY(-10px); border-color: var(--gold); }
 
 .art-img { height: 320px; position: relative; overflow: hidden; }
-.art-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 
-.tag { 
-    position: absolute; 
-    top: 15px; 
-    left: 15px; 
-    background: var(--indigo-royal); 
-    padding: 5px 12px; 
-    font-size: 0.75rem; 
-    border-radius: 4px; 
-    z-index: 2; 
+.art-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
 }
 
-.art-info { 
-    padding: 20px 20px 28px; 
+.tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--indigo-royal);
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    z-index: 2;
 }
-.art-info h3 { color: var(--white); margin-bottom: 5px; }
-.art-info p { color: #888; font-size: 0.9rem; margin-bottom: 10px; }
-.price { color: var(--gold); font-weight: bold; font-size: 1.1rem; }
+
+.art-info {
+    padding: 20px 20px 28px;
+}
+
+.art-info h3 {
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.art-info p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
 /* --- 8. GLOBAL FOOTER --- */
-footer.main-footer { 
-    background: #050a1f !important; 
-    padding: 60px 5% 20px !important; 
+footer.main-footer {
+    background: #050a1f !important;
+    padding: 60px 5% 20px !important;
     border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
     width: 100%;
 }
 
-.footer-content { 
-    display: grid; 
-    grid-template-columns: 2fr 1fr 1fr; 
-    gap: 40px; 
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
 }
 
 .main-footer .footer-links ul,
-.main-footer .footer-links ul li { 
-    list-style: none !important; 
-    padding: 0 !important; 
+.main-footer .footer-links ul li {
+    list-style: none !important;
+    padding: 0 !important;
     margin: 0 !important;
 }
 
-.main-footer .footer-links ul li a { 
-    color: #D4AF37 !important; 
-    text-decoration: none !important; 
-    display: block; 
-    margin-bottom: 12px; 
-    font-size: 0.95rem; 
+.main-footer .footer-links ul li a {
+    color: #D4AF37 !important;
+    text-decoration: none !important;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
     transition: 0.3s ease;
 }
 
-.main-footer .footer-links a:hover { 
-    color: #ffffff !important; 
+.main-footer .footer-links a:hover {
+    color: #ffffff !important;
 }
 
-.footer-contact p { 
-    color: #cccccc; 
-    margin-bottom: 10px; 
-    font-size: 0.9rem; 
+.footer-contact p {
+    color: #cccccc;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
-.footer-bottom { 
-    text-align: center; 
-    padding-top: 20px; 
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
     margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); 
-    font-size: 0.8rem; 
-    color: #666666; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: #666666;
 }
 
 @media (max-width: 768px) {
@@ -289,7 +325,7 @@ footer.main-footer {
     align-items: center;
     justify-content: center;
     padding: 120px 20px 60px;
-    background: linear-gradient(rgba(8, 16, 49, 0.8), rgba(8, 16, 49, 0.8)), 
+    background: linear-gradient(rgba(8, 16, 49, 0.8), rgba(8, 16, 49, 0.8)),
                 url('../assets/images/hero/hero-bg.png') no-repeat center center/cover;
 }
 
@@ -319,7 +355,7 @@ footer.main-footer {
     font-weight: 600;
 }
 
-.input-group input, 
+.input-group input,
 .form-select {
     width: 100%;
     padding: 12px 15px;
@@ -331,7 +367,7 @@ footer.main-footer {
     transition: 0.3s;
 }
 
-.input-group input:focus, 
+.input-group input:focus,
 .form-select:focus {
     outline: none;
     border-color: var(--gold);
@@ -482,6 +518,8 @@ footer.main-footer {
     color: var(--gold);
 }
 
+}
+
 @keyframes pulse-gold {
     0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
@@ -533,6 +571,7 @@ footer.main-footer {
     border: 1px solid rgba(212, 175, 55, 0.1);
     transition: 0.3s;
 }
+
 .counter-item:hover {
     border-color: var(--gold);
     background: rgba(255, 255, 255, 0.05);
@@ -581,7 +620,6 @@ body.about-immersive {
 }
 
 /* --- 4. Footer & Contact Info Restoration --- */
-/* This fixes the "lost style" in your contact section */
 .main-footer .footer-contact {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(212, 175, 55, 0.2) !important;
@@ -618,11 +656,10 @@ html { scroll-behavior: smooth; }
    GLOBAL SOCIAL LINK RESTORATION
    ========================================= */
 
-/* This targets the social-icons in the footer specifically */
 .social-icons a.social-link, 
 .social-icons a {
-    color: #D4AF37 !important; /* Force the Gold color */
-    text-decoration: none !important; /* Remove the blue underline */
+    color: #D4AF37 !important; 
+    text-decoration: none !important; 
     font-weight: 600 !important;
     font-size: 0.9rem !important;
     transition: 0.3s ease;
@@ -635,7 +672,6 @@ html { scroll-behavior: smooth; }
     transform: translateY(-3px);
 }
 
-/* Fix for the copyright text alignment in your screenshot */
 .footer-bottom p {
     color: #777777 !important;
     text-align: center;
@@ -646,7 +682,6 @@ html { scroll-behavior: smooth; }
    MASTER FOOTER CONSISTENCY FIX
    ========================================= */
 
-/* Force Social Links into Gold Circles */
 .social-icons {
     display: flex !important;
     justify-content: center !important;
@@ -658,7 +693,7 @@ html { scroll-behavior: smooth; }
 .social-icons a {
     width: 45px !important;
     height: 45px !important;
-    border: 1px solid #D4AF37 !important; /* The Gold Circle */
+    border: 1px solid #D4AF37 !important; 
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
@@ -677,7 +712,6 @@ html { scroll-behavior: smooth; }
     transform: translateY(-3px) !important;
 }
 
-/* Ensure Contact Info Box is Consistent */
 .footer-contact {
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(212, 175, 55, 0.1) !important;
@@ -760,4 +794,94 @@ html { scroll-behavior: smooth; }
 .loader-hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+/* ==========================================
+   5. PREMIUM MOBILE NAVIGATION (FINAL)
+   ========================================== */
+
+/* 2. THE SIDE DRAWER: Fixes the "Disappearing" bug */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;      /* Starting position */
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: #081031 !important; /* Solid Indigo */
+    z-index: 10000 !important;      /* Moves it in front of the blur */
+    transition: 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--gold);
+}
+
+/* This is the class that makes it reappear */
+.side-drawer.open {
+    right: 0 !important; /* FORCES it onto the screen */
+}
+
+/* 3. THE OVERLAY: Stays behind the menu */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999 !important; /* Behind the drawer (10000) */
+    display: none;
+    backdrop-filter: blur(8px);
+}
+
+.menu-overlay.show {
+    display: block !important;
+}
+
+/* THE HEADER: Spacing for the Gold 'X' */
+.drawer-header {
+    padding: 45px 30px 10px !important;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-drawer {
+    font-size: 3.5rem !important;
+    color: #D4AF37 !important;
+    cursor: pointer;
+    line-height: 0.5;
+    font-weight: 300;
+}
+
+.drawer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 40px 0 0 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.drawer-links li {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.drawer-links a {
+    display: block !important;
+    padding: 24px 45px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 1.25rem !important;
+    font-family: 'Inter', sans-serif !important;
+    transition: 0.3s all ease;
+    text-align: left;
+}
+
+.drawer-links a.active {
+    color: #D4AF37 !important;
+    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.footer-bottom p {
+    color: #777777 !important;
+    text-align: center;
+    margin-top: 20px;
 }
