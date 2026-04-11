@@ -899,3 +899,14 @@ html { scroll-behavior: smooth; }
 .whatsapp-float {
     z-index: 900 !important;
 }
+
+/* MOBILE MENU VISIBILITY BRIDGE */
+@media (max-width: 768px) {
+    /* Ensure the menu is ready to be seen */
+    .nav-links.active {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
