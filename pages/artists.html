@@ -195,24 +195,23 @@
     
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // We use ID selectors (#) because that is what you have in your HTML
-    const menuBtn = document.querySelector('#mobile-menu');
-    const navLinks = document.querySelector('#nav-menu');
+    // MOBILE MENU LOGIC
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('#nav-menu');
 
-    if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', () => {
-            // This toggles the 'active' class which the CSS uses to show the menu
-            navLinks.classList.toggle('active');
+    if (menu && menuLinks) {
+        menu.addEventListener('click', function() {
+            // This adds 'is-active' to the button (for the X animation)
+            menu.classList.toggle('is-active');
+            // This adds 'active' to the links (to make them slide out)
+            menuLinks.classList.toggle('active');
             
-            // This toggles the 'is-active' class for the hamburger animation
-            menuBtn.classList.toggle('is-active');
-            
-            // Helpful for phone debugging:
-            console.log("Menu state:", navLinks.classList.contains('active'));
+            console.log("Artisans Menu Toggled");
         });
     }
 });
-</script>
+    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
