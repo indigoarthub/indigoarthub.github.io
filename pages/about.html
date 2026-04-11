@@ -234,7 +234,19 @@
     </footer>
     
     <script>
-    // FAQ Accordion Logic (Keep this here if it's unique to the About page)
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. MOBILE MENU LOGIC (Must be on every page)
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('#nav-menu');
+
+    if (menu && menuLinks) {
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+    }
+
+    // 2. FAQ ACCORDION LOGIC (Specific to About page)
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     faqQuestions.forEach(question => {
@@ -247,7 +259,7 @@
                 icon.style.transform = "rotate(0deg)";
                 icon.textContent = "+";
             } else {
-                // This closes other open FAQs (Optional but professional)
+                // Closes other open FAQs
                 document.querySelectorAll('.faq-answer').forEach(ans => ans.style.maxHeight = null);
                 document.querySelectorAll('.faq-icon').forEach(icn => {
                     icn.style.transform = "rotate(0deg)";
@@ -260,7 +272,8 @@
             }
         });
     });
-    </script>
+});
+</script>
 
     <script src="../js/script.js"></script>
 </body>
