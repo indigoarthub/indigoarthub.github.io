@@ -2,61 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Artist Dashboard | Indigo Art Hub</title>
-                <link rel="stylesheet" href="../css/style.css">
-                    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-                        <style>
-                                /* Modern Modal Styling */
-                                        .modal-overlay {
-                                                    position: fixed;
-                                                                top: 0; left: 0; width: 100%; height: 100%;
-                                                                            background: rgba(10, 20, 40, 0.9);
-                                                                                        display: none; align-items: center; justify-content: center;
-                                                                                                    z-index: 10000; backdrop-filter: blur(8px);
-                                                                                                            }
-                                                                                                                    .modal-overlay.active { display: flex; }
-                                                                                                                            .modal-content { position: relative; width: 90%; max-width: 450px; }
-                                                                                                                                    
-                                                                                                                                            .close-modal {
-                                                                                                                                                        position: absolute; top: 15px; right: 20px;
-                                                                                                                                                                    font-size: 1.8rem; color: var(--gold); cursor: pointer;
-                                                                                                                                                                                transition: transform 0.3s;
-                                                                                                                                                                                        }
-                                                                                                                                                                                                .close-modal:hover { transform: rotate(90deg); color: #fff; }
-                                                                                                                                                                                                        
-                                                                                                                                                                                                                /* Image Preview Box */
-                                                                                                                                                                                                                        #imagePreviewContainer {
-                                                                                                                                                                                                                                    width: 100%; height: 180px;
-                                                                                                                                                                                                                                                border: 2px dashed rgba(212, 175, 55, 0.3);
-                                                                                                                                                                                                                                                            border-radius: 10px; margin-bottom: 15px;
-                                                                                                                                                                                                                                                                        display: none; align-items: center; justify-content: center;
-                                                                                                                                                                                                                                                                                    overflow: hidden; background: rgba(255,255,255,0.05);
-                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                    #imagePreview { width: 100%; height: 100%; object-fit: cover; }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Dashboard | Indigo Art Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Modern Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 20, 40, 0.9);
+            display: none; align-items: center; justify-content: center; z-index: 10000; backdrop-filter: blur(8px);
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content { position: relative; width: 90%; max-width: 450px; }
+        .close-modal {
+            position: absolute; top: 15px; right: 20px;
+            font-size: 1.8rem; color: var(--gold); cursor: pointer;
+            transition: transform 0.3s;
+                                                                                                                                                            .close-modal:hover { transform: rotate(90deg); color: #fff; }
+/* Image Preview Box */
+#imagePreviewContainer {
+    width: 100%; height: 180px;
+    border: 2px dashed rgba(212, 175, 55, 0.3);
+    border-radius: 10px; margin-bottom: 15px;
+    display: none; align-items: center; justify-content: center;
+    overflow: hidden; background: rgba(255,255,255,0.05);
+}
 
-                                                                                                                                                                                                                                                                                                            /* Delete Button Upgrade */
-                                                                                                                                                                                                                                                                                                                    .delete-btn {
-                                                                                                                                                                                                                                                                                                                                border-color: rgba(255, 70, 70, 0.5) !important;
-                                                                                                                                                                                                                                                                                                                                            color: rgba(255, 70, 70, 0.8) !important;
-                                                                                                                                                                                                                                                                                                                                                        transition: all 0.3s ease !important;
-                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                        .delete-btn:hover {
-                                                                                                                                                                                                                                                                                                                                                                                    background: rgba(255, 70, 70, 0.1) !important;
-                                                                                                                                                                                                                                                                                                                                                                                                border-color: #ff4646 !important;
-                                                                                                                                                                                                                                                                                                                                                                                                            color: #ff4646 !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                    }
+#imagePreview { width: 100%; height: 100%; object-fit: cover; }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                            /* Mobile Menu Centering Fix */
-                                                                                                                                                                                                                                                                                                                                                                                                                                    .nav-links.active {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                display: flex !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            flex-direction: column !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        align-items: center !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    justify-content: center !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                text-align: center !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            gap: 25px !important;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </style>
+/* Delete Button Upgrade */
+.delete-btn {
+    border-color: rgba(255, 70, 70, 0.5) !important;
+    color: rgba(255, 70, 70, 0.8) !important;
+    transition: all 0.3s ease !important;
+}
+.delete-btn:hover {
+    background: rgba(255, 70, 70, 0.1) !important;
+    border-color: #ff4646 !important;
+    color: #ff4646 !important;
+}
+            
+/* Mobile Menu Centering Fix */
+.nav-links.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 25px !important;
+}
+</style>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </head>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <body class="gallery-immersive">
 
