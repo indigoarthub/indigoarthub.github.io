@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "indigoarthub",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "README.md",
+      "LICENSE"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
+}
